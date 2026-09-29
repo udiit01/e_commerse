@@ -1,12 +1,13 @@
-from pydantic import BaseModel
+from pydantic import BaseModel,Field
 from typing import Optional
 
 class ProductBase(BaseModel):
     name: str
     description: Optional[str] = None
-    price: float
+    price: float=Field(ge=0)
     category_id: int
-    stock: int = 0
+    stock: int =  Field(default=0, ge=0)
+
 
 class ProductCreate(ProductBase):
     pass
@@ -21,7 +22,7 @@ class ProductUpdate(BaseModel):
 class ProductRead(ProductBase):
     id: int
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 
 

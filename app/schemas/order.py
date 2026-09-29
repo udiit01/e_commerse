@@ -14,4 +14,4 @@ class OrderRead(BaseModel):
     total_amount: float
     status: str
     class Config:
-        orm_mode = True
+        from_attributes = True

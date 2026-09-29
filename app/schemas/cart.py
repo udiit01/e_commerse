@@ -10,10 +10,10 @@ class CartItemRead(BaseModel):
     product_id: int
     quantity: int
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 class CartRead(BaseModel):
     id: int
     items: List[CartItemRead] = []
     class Config:
-        orm_mode = True
+        from_attributes = True
