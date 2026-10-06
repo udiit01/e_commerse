@@ -17,3 +17,6 @@ class CategoryRead(CategoryBase):
     subcategories: List["CategoryRead"] = []
     class Config:
         from_attributes = True
+
+
+        

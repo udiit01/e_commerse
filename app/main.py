@@ -14,3 +14,14 @@ app.include_router(cart.router)
 app.include_router(orders.router)
 app.include_router(payments.router)
 app.include_router(admin.router)
+
+
+print("CART MODULE:", cart.__file__)
+
+print("CART ROUTER ROUTES:")
+for route in cart.router.routes:
+    print(route.path, route.methods)
+
+print("APP ROUTES:")
+for route in app.routes:
+    print(route.path, route.methods)
